@@ -1,0 +1,122 @@
+/* ===== FONDO GENERAL ===== */
+body {
+  background-color: #f1f3f6;
+}
+
+/* ===== CONTENEDOR ===== */
+.container {
+  max-width: 1200px;
+}
+
+/* ===== FORMULARIO ===== */
+.card-form {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.titulo-form {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #212529;
+  font-weight: 600;
+}
+
+/* ===== INPUTS ===== */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+/* ===== BOTONES FORM ===== */
+.btn-crear {
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-actualizar {
+  background: linear-gradient(135deg, #ffc107, #ffca2c);
+  color: #212529;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ===== HEADER LISTADO ===== */
+.listado-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.titulo-listado {
+  font-weight: 600;
+  color: #212529;
+}
+
+/* ===== BOTÓN CARGAR ===== */
+.btn-cargar {
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #198754, #157347);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-cargar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.4);
+}
+
+/* ===== TABLA ===== */
+.table-custom {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.table-custom thead {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+.table-custom th,
+.table-custom td {
+  vertical-align: middle;
+}
+
+/* ===== BOTONES TABLA ===== */
+.btn-ver {
+  background-color: #0dcaf0;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn-editar {
+  background-color: #6c757d;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn-ver:hover,
+.btn-editar:hover,
+.btn-eliminar:hover {
+  opacity: 0.85;
+}

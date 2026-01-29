@@ -1,0 +1,138 @@
+<div class="container mt-4">
+  <div class="row">
+
+    <!-- FORMULARIO -->
+    <div class="col-md-4">
+      <div class="card card-form">
+        <div class="card-body">
+          <h4 class="titulo-form">
+            {{ editando ? 'Editar Empleado' : 'Registrar Empleado' }}
+          </h4>
+
+          <form #empleadoForm="ngForm">
+
+            <input
+              class="form-control mb-2"
+              name="nombre"
+              [(ngModel)]="empleado.nombre"
+              placeholder="Nombre"
+              required
+            />
+
+            <input
+              class="form-control mb-2"
+              name="cargo"
+              [(ngModel)]="empleado.cargo"
+              placeholder="Cargo"
+              required
+            />
+
+            <input
+              class="form-control mb-2"
+              name="departamento"
+              [(ngModel)]="empleado.departamento"
+              placeholder="Departamento"
+              required
+            />
+
+            <input
+              class="form-control mb-3"
+              type="number"
+              name="sueldo"
+              [(ngModel)]="empleado.sueldo"
+              placeholder="Sueldo"
+              required
+            />
+
+            <!-- BOTONES -->
+            <button
+              class="btn btn-crear w-100 mb-2"
+              *ngIf="!editando"
+              (click)="crearEmpleado(empleadoForm)"
+            >
+              Crear
+            </button>
+
+            <button
+              class="btn btn-actualizar w-100"
+              *ngIf="editando"
+              (click)="actualizarEmpleado(empleadoForm)"
+            >
+              Actualizar
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTADO -->
+    <div class="col-md-8">
+
+      <!-- HEADER LISTADO -->
+      <div class="listado-header">
+        <h4 class="titulo-listado">Listado de Empleados</h4>
+
+        <button
+          class="btn btn-cargar"
+          (click)="obtenerEmpleados()"
+        >
+          Cargar
+        </button>
+      </div>
+
+      <!-- TABLA -->
+      <div class="table-responsive">
+        <table class="table table-custom">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Cargo</th>
+              <th>Departamento</th>
+              <th>Sueldo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let e of empleados">
+              <td>{{ e.nombre }}</td>
+              <td>{{ e.cargo }}</td>
+              <td>{{ e.departamento }}</td>
+              <td>${{ e.sueldo }}</td>
+              <td>
+                <button
+                  class="btn btn-ver btn-sm me-1"
+                  (click)="verEmpleado(e)"
+                >
+                  Ver
+                </button>
+
+                <button
+                  class="btn btn-editar btn-sm me-1"
+                  (click)="editarEmpleado(e)"
+                >
+                  Editar
+                </button>
+
+                <button
+                  class="btn btn-eliminar btn-sm"
+                  (click)="eliminarEmpleado(e._id)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+
+            <tr *ngIf="empleados.length === 0">
+              <td colspan="5" class="text-center text-muted">
+                No hay empleados registrados
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
